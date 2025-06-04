@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Problema 3.9 - Costo póliza seguro</title>
+  <link rel="stylesheet" href="../estilos.css" />
+  <script src="../vinculador.js" defer></script>
+</head>
+<body>
+
+  <h1>Problema 3.9 - Cálculo costo póliza de seguro</h1>
+
+  <label for="tipoPoliza3_9">Tipo de póliza:</label>
+  <select id="tipoPoliza3_9">
+    <option value="A">Cobertura amplia (A)</option>
+    <option value="B">Daños a terceros (B)</option>
+  </select><br><br>
+
+  <label>¿Conductor bebe alcohol?</label>
+  <select id="bebeAlcohol3_9">
+    <option value="sí">Sí</option>
+    <option value="no">No</option>
+  </select><br><br>
+
+  <label>¿Usa lentes?</label>
+  <select id="usaLentes3_9">
+    <option value="sí">Sí</option>
+    <option value="no">No</option>
+  </select><br><br>
+
+  <label>¿Padece alguna enfermedad?</label>
+  <select id="tieneEnfermedad3_9">
+    <option value="sí">Sí</option>
+    <option value="no">No</option>
+  </select><br><br>
+
+  <label for="edad3_9">Edad:</label>
+  <input type="number" id="edad3_9" min="0" /><br><br>
+
+  <button onclick="calcularCostoPoliza()">Calcular costo</button>
+
+  <p id="resultado3_9"></p>
+
+</body>
+
+
+</html>

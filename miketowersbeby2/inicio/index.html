@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicios de decisiones toledoo</title>
+  <style>
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 20px;
+      background: #ff8686;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ejerciciostoledo miguelmtz</h1>
+
+  <button id="btn-comenzar">Comenzar</button>
+  <button id="btn-anterior" style="display: none;">Anterior problema</button>
+  <button id="btn-siguiente" style="display: none;">Siguiente problema</button>
+  <button id="btn-inicio" style="display: none;">Volver al inicio</button>
+
+  <iframe id="visor-problemas" style="display: none;"></iframe>
+
+  <script>
+    const problemas = [
+      "../problema1/index.html",
+      "../problema2/index.html",
+      "../problema3/index.html",
+      "../problema4/index.html",
+      "../problema5/index.html",
+      "../problema6/index.html",
+      "../problema7/index.html",
+      "../problema8/index.html",
+      "../problema9/index.html",
+      "../problema10/index.html",
+      "../problema11/index.html",
+      "../problema12/index.html",
+      "../problema13/index.html"
+    ];
+
+    let indice = 0;
+
+    const iframe = document.getElementById('visor-problemas');
+    const btnComenzar = document.getElementById('btn-comenzar');
+    const btnAnterior = document.getElementById('btn-anterior');
+    const btnSiguiente = document.getElementById('btn-siguiente');
+    const btnInicio = document.getElementById('btn-inicio');
+
+    btnComenzar.addEventListener('click', () => {
+      indice = 0;
+      iframe.src = problemas[indice];
+      iframe.style.display = 'block';
+      btnAnterior.style.display = 'inline-block';
+      btnSiguiente.style.display = 'inline-block';
+      btnInicio.style.display = 'inline-block';
+      btnComenzar.style.display = 'none';
+    });
+
+    btnAnterior.addEventListener('click', () => {
+      indice = (indice - 1 + problemas.length) % problemas.length;
+      iframe.src = problemas[indice];
+    });
+
+    btnSiguiente.addEventListener('click', () => {
+      indice = (indice + 1) % problemas.length;
+      iframe.src = problemas[indice];
+    });
+
+    btnInicio.addEventListener('click', () => {
+      indice = 0;
+      iframe.src = '';
+      iframe.style.display = 'none';
+      btnAnterior.style.display = 'none';
+      btnSiguiente.style.display = 'none';
+      btnInicio.style.display = 'none';
+      btnComenzar.style.display = 'inline-block';
+    });
+  </script>
+</body>
+</html>
